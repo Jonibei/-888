@@ -1,0 +1,7 @@
+{
+  "lastPrdSyncCommit": "402e986f95e817df68f91ba39af57d0ac90b2a23",
+  "lastPrdSyncAt": "2026-10-19",
+  "module": "presentation",
+  "lastChangedFiles": ["src/app/layout.tsx", "src/app/globals.css", "postcss.config.mjs", "next.config.ts", "playwright.config.ts"],
+  "notes": "包含未提交实现，桌面 / 手机截图与 390px 首页冒烟通过，更多视口和可访问性待完整验收。"
+}

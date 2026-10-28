@@ -1,0 +1,32 @@
+import { test, expect } from "@playwright/test";
+test("首页进入类目、切换与返回的核心路径", async ({ page }) => {
+  const errors:string[] = [];
+  page.on("pageerror", error => errors.push(error.message));
+  await page.goto("/");
+  await expect(page.getByTestId("home-list-categories").getByRole("link")).toHaveCount(5);
+  await page.getByTestId("home-link-category-category-1").click();
+  await expect(page.getByTestId("category-status-title")).toHaveText("类目一");
+  await expect(page.getByTestId("category-list-works").locator("article")).toHaveCount(6);
+  await expect(page.getByTestId("layout-link-category-category-1")).toHaveAttribute("aria-current", "page");
+  await page.reload();
+  await expect(page.getByTestId("category-status-title")).toHaveText("类目一");
+  await page.getByTestId("layout-link-category-category-5").click();
+  await expect(page.getByTestId("category-status-title")).toHaveText("类目五");
+  await page.getByTestId("layout-link-home").click();
+  await expect(page.getByTestId("home-list-categories")).toBeVisible();
+  expect(errors).toEqual([]);
+  await page.screenshot({ path:"test-results/home-desktop.png", fullPage:true });
+});
+test("手机核心入口和未知类目回退", async ({ page }) => {
+  await page.setViewportSize({ width:390, height:844 });
+  await page.goto("/");
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
+  await page.screenshot({ path:"test-results/home-mobile.png", fullPage:true });
+  await page.getByTestId("home-link-category-category-2").click();
+  await expect(page.getByTestId("category-status-title")).toHaveText("类目二");
+  await page.screenshot({ path:"test-results/category-mobile.png", fullPage:true });
+  await page.goto("/works/unknown");
+  await expect(page.getByTestId("notfound-status-message")).toBeVisible();
+  await page.getByTestId("notfound-link-home").click();
+  await expect(page.getByTestId("home-list-categories")).toBeVisible();
+});

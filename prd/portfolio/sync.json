@@ -1,0 +1,7 @@
+{
+  "lastPrdSyncCommit": "402e986f95e817df68f91ba39af57d0ac90b2a23",
+  "lastPrdSyncAt": "2026-10-19",
+  "module": "portfolio",
+  "lastChangedFiles": ["src/app/page.tsx", "src/app/works/[categorySlug]/page.tsx", "src/app/not-found.tsx", "src/components/site-header.tsx", "src/components/category-card.tsx", "src/components/work-grid.tsx", "src/fixtures/portfolio.ts", "src/lib/portfolio.ts", "src/lib/portfolio.test.ts", "tests/smoke.spec.ts"],
+  "notes": "包含未提交实现，核心路径冒烟通过，全量验收待执行。"
+}

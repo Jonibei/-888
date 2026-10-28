@@ -1,0 +1,7 @@
+{
+  "lastPrdSyncCommit": "402e986f95e817df68f91ba39af57d0ac90b2a23",
+  "lastPrdSyncAt": "2026-10-19",
+  "mode": "migration",
+  "modulesUpdated": ["portfolio", "presentation"],
+  "notes": "首次同步无旧基线，已全量扫描产品源码、路由、组件、配置、脚本与测试。包含本轮未提交代码观察；仅轻量验证，不代表全量验收或部署。"
+}

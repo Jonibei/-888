@@ -1,0 +1,477 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#edf6ff">
+  <meta name="description" content="视觉设计师跨部门协作与 AI 使用情况调查">
+  <title>一起聊聊设计协作 · 视觉设计师调查</title>
+  <style>
+    :root{color-scheme:light;--ink:#203b57;--muted:#7890a7;--blue:#4386c3;--blue-dark:#326fa7;--blue-pale:#edf6ff;--line:#e6eef5;--card:#fff;--shadow:0 18px 52px rgba(54,105,151,.12);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;min-width:320px;background:#eaf4ff;color:var(--ink);font-size:15px;line-height:1.65}button,input,textarea,select{font:inherit}button{touch-action:manipulation}a{color:inherit;text-decoration:none}button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible,summary:focus-visible{outline:3px solid #4b91cb;outline-offset:3px}
+    .app{position:relative;isolation:isolate;min-height:100vh;overflow:hidden;background:linear-gradient(145deg,#e9f4ff,#f6faff 54%,#e6f2ff)}.decor{position:absolute;inset:0;z-index:-1;overflow:hidden;pointer-events:none}.decor i{position:absolute;display:block;border-radius:50%;background:#cde5fa;opacity:.58}.decor i:nth-child(1){width:340px;height:340px;top:180px;left:-190px}.decor i:nth-child(2){width:410px;height:410px;top:590px;right:-220px;background:#b9daf5;opacity:.4}.decor i:nth-child(3){width:340px;height:340px;top:1450px;left:-195px;opacity:.38}.decor i:nth-child(4){width:420px;height:420px;top:2300px;right:-245px;opacity:.34}
+    .wrap{width:min(100% - 32px,1120px);margin-inline:auto}.topbar{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:17px 0}.brand{display:flex;align-items:center;gap:10px;font-size:14px;font-weight:750}.brand-mark{display:grid;place-items:center;width:34px;height:34px;border-radius:12px;background:#d8ecff;color:#4386c3}.brand-mark svg{width:18px;height:18px}.nav{display:flex;gap:7px}.nav button{display:inline-flex;align-items:center;gap:7px;min-height:42px;padding:0 13px;border:1px solid transparent;border-radius:13px;background:transparent;color:#637e98;font-size:12px;cursor:pointer}.nav button.active{border-color:#d6e8f8;background:#fff;color:#386f9f;box-shadow:0 4px 12px rgba(66,120,166,.07)}
+    .hero{display:grid;align-items:center;gap:28px;min-height:420px;padding:40px 0 48px}.hero-copy{padding:12px 4px}.eyebrow{margin:0;color:#7298bb;font-size:10px;font-weight:800;letter-spacing:.16em}.hero h1,.analysis-head h1{margin:17px 0 0;font-size:clamp(40px,8vw,74px);line-height:1.13;letter-spacing:-.06em}.hero h1 em,.analysis-head h1 em{color:var(--blue);font-style:normal}.hero-copy>p:not(.eyebrow){max-width:470px;margin:18px 0 0;color:#66819b;font-size:15px;line-height:1.9}.meta{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-top:22px;color:#7892aa;font-size:11px}.dot{width:4px;height:4px;border-radius:50%;background:#97b2ca}.scroll-link{display:inline-grid;place-items:center;width:42px;height:42px;margin-top:22px;border:1px solid #b9d5ef;border-radius:50%;color:#4b86b6;transition:transform .2s}.scroll-link:hover{transform:translateY(3px)}.hero-note{position:relative;max-width:410px;margin:10px auto;padding:30px;border:1px solid #fff;border-radius:27px;background:#ffffffde;box-shadow:var(--shadow)}.hero-note:before,.hero-note:after{position:absolute;z-index:-1;content:"";width:140px;height:140px;border-radius:50%;background:#c8e2f8;opacity:.65}.hero-note:before{top:-42px;right:-24px}.hero-note:after{bottom:-30px;left:-31px;width:100px;height:100px}.hero-note h2{margin:0;font-size:17px}.hero-note p{margin:7px 0 0;color:var(--muted);font-size:12px}.stat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:22px}.stat{padding:12px 9px;border-radius:15px;background:#f2f8fe;text-align:center}.stat strong{display:block;color:#477fae;font-size:21px;line-height:1.2}.stat span{color:#8da3b7;font-size:10px}
+    .panel{width:min(100%,850px);margin:0 auto 30px;padding:clamp(19px,4vw,34px);border:1px solid #fff;border-radius:26px;background:#fffffff2;box-shadow:var(--shadow)}.progress-top{display:flex;justify-content:space-between;gap:12px;color:#8499ac;font-size:11px}.progress{height:6px;margin-top:11px;border-radius:99px;background:#edf3f8;overflow:hidden}.progress span{display:block;height:100%;border-radius:inherit;background:linear-gradient(90deg,#9bc8ef,#4b91ce);transition:width .25s}.part-head{padding:23px 0 17px;border-bottom:1px solid #eff3f7}.part-head h2{margin:5px 0 0;color:#244766;font-size:27px;letter-spacing:-.04em}.part-head p:last-child{margin:5px 0 0;color:#8398ab;font-size:12px}.question{min-width:0;margin:0;padding:21px 0 18px;border:0;border-bottom:1px solid #eff3f7}.question legend{display:block;width:100%;padding:0;color:#304d68;font-size:14px;font-weight:700;line-height:1.7}.qnum{display:inline-grid;place-items:center;width:29px;height:25px;margin-right:8px;border-radius:9px;background:#eef7ff;color:#5a91bf;font-size:10px;vertical-align:1px}.optional{margin-left:7px;color:#9aabba;font-size:10px;font-weight:450}.hint{margin:5px 0 9px 37px;color:#94a7b8;font-size:10px}.options{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;margin-top:12px}.option{display:flex;align-items:center;justify-content:center;gap:7px;min-width:0;min-height:46px;padding:8px 10px;border:1px solid #e2ebf3;border-radius:14px;background:#fbfdff;color:#61798e;font-size:11px;line-height:1.4;text-align:center;cursor:pointer;transition:border-color .16s,background .16s,color .16s,transform .16s}.option:hover{border-color:#b2d4f2;transform:translateY(-1px)}.option.selected{border-color:#79addc;background:#eaf5ff;color:#28699f;box-shadow:inset 0 0 0 1px #5993c61c}.check{flex:0 0 auto;font-size:14px;font-weight:800}.field{width:100%;margin-top:12px;padding:13px;border:1px solid #e2ebf3;border-radius:15px;background:#fbfdff;color:#36536d;font-size:13px;line-height:1.7}.field::placeholder{color:#a4b4c2}.field:focus{border-color:#79addc;outline:3px solid #5394cb29}.matrix{display:grid;gap:8px;margin-top:12px}.matrix-row{border:1px solid #e5eef6;border-radius:13px;background:#fbfdff;overflow:hidden}.matrix-row summary{display:flex;align-items:center;justify-content:space-between;gap:10px;min-height:45px;padding:0 12px;color:#58748e;font-size:11px;font-weight:650;cursor:pointer;list-style:none}.matrix-row summary::-webkit-details-marker{display:none}.matrix-row summary:after{content:"＋";color:#78a6ce}.matrix-row[open] summary:after{content:"−"}.matrix-row small{margin-left:auto;color:#99aebe;font-size:10px;font-weight:450}.matrix .options{margin:0;padding:0 9px 10px}.matrix-select{display:grid;grid-template-columns:100px minmax(0,1fr);align-items:center;gap:10px;min-height:48px;padding:5px 11px;border:1px solid #e5eef6;border-radius:13px;background:#fbfdff;color:#58748e;font-size:11px}.matrix-select select{width:100%;min-height:36px;padding:0 9px;border:1px solid #e5eef6;border-radius:10px;background:#fff;color:#60778c;font-size:11px}.error{margin:15px 0 0;color:#b55359;font-size:12px}.actions{display:flex;justify-content:space-between;gap:10px;padding-top:19px}.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:0 18px;border:0;border-radius:15px;font-size:13px;font-weight:700;cursor:pointer}.btn.primary{margin-left:auto;background:linear-gradient(135deg,#5ba1dd,#397dbb);color:#fff;box-shadow:0 8px 18px #4384be33}.btn.secondary{border:1px solid #deebf5;background:#fff;color:#66819a}.btn:disabled{opacity:.6;cursor:wait}.privacy,.footnote{margin:14px 0 0;color:#97aaba;font-size:10px;line-height:1.8}.honeypot{position:absolute;left:-10000px;width:1px;height:1px;overflow:hidden}
+    .thanks{min-height:360px;display:flex;flex-direction:column;justify-content:center;align-items:flex-start}.success-icon{display:grid;place-items:center;width:52px;height:52px;border-radius:18px;background:#e2f2ff;color:#4786bf;font-size:24px}.thanks h2{margin:20px 0 0;font-size:34px;line-height:1.35;letter-spacing:-.04em}.thanks p{color:#70889f;font-size:13px}.view[hidden]{display:none!important}.analysis-head{padding:35px 4px 20px}.analysis-head h1{font-size:clamp(36px,7vw,58px)}.analysis-head>p:last-child{max-width:620px;margin:14px 0 0;color:#7189a0;font-size:13px;line-height:1.8}.count-card{display:flex;align-items:baseline;gap:9px;width:min(100%,850px);margin:0 auto 14px;padding:16px 19px;border:1px solid #fff;border-radius:19px;background:#ffffffdc;box-shadow:0 10px 27px #4174a410}.count-card span{color:#7188a0;font-size:12px}.count-card strong{color:#367fbc;font-size:30px;line-height:1}.count-card small{color:#8da1b3;font-size:10px}.refresh{display:inline-flex;align-items:center;gap:5px;min-height:36px;margin-left:auto;padding:0 10px;border:0;border-radius:10px;background:#eff7ff;color:#5788b4;font-size:11px;cursor:pointer}.status{width:min(100%,850px);margin:14px auto;color:#7089a2;font-size:12px}.callout{display:flex;flex-direction:column;gap:7px;padding:17px;border:1px solid #cfe3f5;border-radius:17px;background:#f7fbff}.callout strong{color:#365d80;font-size:14px}.callout span{color:#7791a8;line-height:1.8}.groups{width:min(100%,850px);margin:0 auto}.group{margin-top:11px;border:1px solid #fff;border-radius:19px;background:#ffffffb8;box-shadow:0 8px 24px #4174a40f;overflow:hidden}.group>summary{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:54px;padding:0 17px;color:#365977;font-size:13px;font-weight:750;cursor:pointer;list-style:none}.group>summary::-webkit-details-marker{display:none}.group>summary:after{content:"＋";color:#6b9ac2}.group[open]>summary:after{content:"−"}.group>summary small{margin-left:auto;color:#91a7bb;font-size:10px;font-weight:450}.charts{display:grid;gap:12px;width:min(100% - 18px,100%);margin:0 auto 12px}.chart{min-width:0;padding:17px;border:1px solid #fff;border-radius:18px;background:#ffffffed;box-shadow:0 8px 24px #4174a40c}.chart-id{margin:0;color:#5992c0;font-size:10px;font-weight:800;letter-spacing:.08em}.chart h3{margin:4px 0 0;color:#2b4b69;font-size:14px;line-height:1.65}.chart-note{margin:4px 0 0;color:#96a8b8;font-size:10px}.bars{display:grid;gap:10px;margin-top:15px}.bar-label{display:flex;justify-content:space-between;gap:10px;color:#6d8295;font-size:11px}.bar-label strong{color:#507ea7}.track{height:7px;margin-top:5px;border-radius:99px;background:#edf4fa;overflow:hidden}.track span{display:block;height:100%;border-radius:inherit;background:linear-gradient(90deg,#a7d1f3,#5d9bd0)}.empty{display:flex;align-items:center;gap:9px;margin-top:15px;padding:13px 10px;border-radius:13px;background:#f5faff;color:#8ca3b8;font-size:11px}.summary-line{margin:12px 0 0;padding-top:10px;border-top:1px solid #eff4f8;color:#8297aa;font-size:10px}.footer{display:flex;justify-content:space-between;gap:12px;width:min(100% - 32px,1120px);margin:24px auto 0;padding:0 0 26px;color:#8ea8bf;font-size:9px;letter-spacing:.05em}
+    @media(min-width:760px){.wrap{width:min(100% - 56px,1120px)}.hero{grid-template-columns:minmax(0,1.1fr) minmax(320px,.9fr);min-height:500px;gap:48px}.hero-note{width:100%;padding:38px}.panel{margin-bottom:40px}.options{grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}.charts{grid-template-columns:repeat(2,minmax(0,1fr));width:min(100% - 24px,100%)}.group>summary{min-height:60px}.footer{width:min(100% - 56px,1120px)}}
+    @media(max-width:420px){.wrap{width:calc(100% - 24px)}.topbar{padding-top:12px}.nav button{padding:0 9px;font-size:11px}.brand{font-size:12px}.hero{min-height:450px;padding:26px 0 34px;align-content:center;gap:12px}.hero h1{font-size:clamp(40px,12vw,53px)}.hero-note{padding:22px;margin-top:5px}.panel{padding:19px 15px;border-radius:22px}.option{padding:8px 5px;font-size:10px}.matrix-select{grid-template-columns:82px minmax(0,1fr)}.footer{width:calc(100% - 24px)}}
+    @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
+  </style>
+</head>
+<body>
+  <div class="app">
+    <div class="decor" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+    <header class="wrap topbar">
+      <a class="brand" href="#top" aria-label="问卷首页"><span class="brand-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="m12 3 1.5 5.5L19 10l-5.5 1.5L12 17l-1.5-5.5L5 10l5.5-1.5L12 3Z"/><path d="m19 15 .8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8L19 15Z"/></svg></span>一起聊聊设计协作</a>
+      <nav class="nav" aria-label="主要导航"><button type="button" class="active" data-view="survey" data-testid="standalone-tab-survey">开始问卷</button><button type="button" data-view="analysis" data-testid="standalone-tab-analysis">数据分析</button></nav>
+    </header>
+    <main class="wrap" id="top">
+      <section class="view" id="survey-view">
+        <section class="hero" aria-labelledby="hero-title">
+          <div class="hero-copy"><p class="eyebrow">A SMALL SURVEY FOR DESIGNERS</p><h1 id="hero-title">让我们了解<br><em>你</em>的工作日常。</h1><p>关于视觉设计、跨部门协作，以及 AI 如何走进你的工作。你的经验，会让协作更好一点。</p><div class="meta"><span>约 6 分钟</span><i class="dot"></i><span>共 5 个部分</span><i class="dot"></i><span>不要求姓名</span></div><a class="scroll-link" href="#survey-content" aria-label="开始填写问卷">↓</a></div>
+          <aside class="hero-note"><p class="eyebrow">DESIGN × COLLABORATION × AI</p><h2>一份关于设计工作日常的小调查</h2><p>从基本信息到返工协作，聊聊真实的工作方式。</p><div class="stat-grid"><div class="stat"><strong>05</strong><span>个部分</span></div><div class="stat"><strong>26</strong><span>个问题</span></div><div class="stat"><strong>06′</strong><span>预计用时</span></div></div></aside>
+        </section>
+        <section class="panel" id="survey-content" aria-labelledby="part-title"><div id="form-container"></div></section>
+      </section>
+      <section class="view" id="analysis-view" hidden>
+        <div class="analysis-head"><p class="eyebrow">RESPONSE OVERVIEW</p><h1>一起看看<br><em>大家怎么想。</em></h1><p id="analysis-description">展示全部选择题的汇总，不会在看板展示开放回答。</p></div>
+        <section class="count-card" data-testid="analysis-total"><span>当前有效样本</span><strong id="response-count">0</strong><small>份问卷</small><button type="button" class="refresh" id="refresh-analysis" data-testid="analysis-btn-refresh">↻ 刷新</button></section>
+        <p class="status" id="analysis-status" aria-live="polite"></p>
+        <div class="groups" id="analysis-groups"></div>
+      </section>
+    </main>
+    <footer class="footer"><span>DESIGN × COLLABORATION × AI</span><span>请勿在开放题中填写姓名或公司客户信息</span></footer>
+  </div>
+  <script>
+    (()=>{
+      // 留空时在当前浏览器保存；若此文件与 Next.js 同源托管且服务端已配置 Sheets，可改成 "/api/survey"。
+      const API_ENDPOINT=new URLSearchParams(location.search).get("api")==="1"?"/api/survey":"";
+      const stages=["需求接收","方向讨论","首稿制作","组内评审","跨部门对齐","修改迭代","交付上线"];
+      const sections=[
+        {id:"profile",title:"基本信息",eyebrow:"PART 01 · ABOUT YOU",description:"先认识你的工作环境与角色。",questions:[
+          {id:"q1",prompt:"你目前主要从事哪类视觉设计？",kind:"single",options:["品牌 / 平面设计","UI / 界面设计","电商 / 营销设计","动效 / 视频设计","其他"]},
+          {id:"q2",prompt:"你所在公司的规模大约是？",kind:"single",options:["20 人以下","20–99 人","100–499 人","500–2000 人","2000 人以上","不清楚"]},
+          {id:"q3",prompt:"你从事视觉设计工作的年限？",kind:"single",options:["不到 1 年","1–3 年","3–5 年","5–8 年","8 年以上"]},
+          {id:"q4",prompt:"你在团队中通常担任什么角色？",kind:"single",options:["执行设计师","独立负责项目","设计负责人 / 管理者","其他"]},
+          {id:"q5",prompt:"你目前使用 AI 的频率或深度？",kind:"single",options:["基本不使用","偶尔生成素材","日常生成并编辑","已融入设计工作流","会配置或编排 AI Agent"]},
+          {id:"q6",prompt:"公司主要服务哪些行业？（最多选 3 项）",kind:"multiple",max:3,options:["互联网 / 科技","消费 / 零售","教育","金融","医疗健康","旅游 / 文旅","制造业","公共服务","其他"]},
+          {id:"q7",prompt:"公司是否搭建了自己的 AI Agent？",kind:"single",options:["已投入使用","正在试点","计划搭建","没有","不清楚"]}
+        ]},
+        {id:"flow",title:"项目如何开始",eyebrow:"PART 02 · PROJECT FLOW",description:"回想最近一个完成的项目，逐阶段看看团队和 AI 如何参与。",questions:[
+          {id:"q8",prompt:"最近一个完成的项目里，每个阶段通常由谁参与？",kind:"matrix",rows:stages,multi:true,max:4,options:["我自己","设计组成员","设计负责人","其他部门","外部供应商","客户 / 需求方","AI Agent","共同负责","其他"]},
+          {id:"q9",prompt:"这些项目阶段中，AI 大约承担多少工作？",kind:"matrix",rows:stages,options:["没有使用","不到 25%","25%–50%","51%–75%","超过 75%","不确定"]},
+          {id:"q10",prompt:"每个阶段主要会对接哪些部门或角色？",kind:"matrix",rows:stages,multi:true,max:4,options:["运营","市场","产品 / 项目经理","研发 / 技术","设计负责人","客户","供应商 / 印厂","没有固定对接对象"]},
+          {id:"q11",prompt:"项目刚下达时，组内通常如何沟通协作？",kind:"multiple",max:5,options:["项目启动会","即时通讯群","项目管理工具","需求 / 评审文档","直接找相关同事沟通","没有固定流程","其他"]},
+          {id:"q12",prompt:"如果团队使用 AI Agent，它会参与哪些项目工作？",kind:"multiple",optional:true,options:["整理需求","会议纪要","拆分任务 / 排期","资料调研","生成或整理素材","其他","目前没有 Agent"]},
+          {id:"q13",prompt:"你会用 AI Agent 处理哪些非设计工作？",kind:"multiple",options:["撰写 / 润色文字","总结信息","整理会议记录","翻译","数据整理","任务规划","准备跨部门沟通内容","其他","暂时不会"]},
+          {id:"q14",prompt:"你会借助 AI Agent 与其他部门交流对接吗？",kind:"single",options:["经常使用","偶尔使用","试过但没有持续","没有使用","工作中不需要"]}
+        ]},
+        {id:"collab",title:"日常跨部门协作",eyebrow:"PART 03 · COLLABORATION",description:"跨部门合作时，哪些环节最需要彼此配合？",questions:[
+          {id:"q15",prompt:"你最常对接哪些部门或角色？（最多选 4 项）",kind:"multiple",max:4,options:["运营","市场","产品","研发 / 技术","设计负责人","客户","供应商 / 印厂","没有固定对接对象"]},
+          {id:"q16",prompt:"哪个阶段最花时间？",kind:"single",options:["接收需求","讨论方向","制作初稿","内部评审","跨部门对齐","修改","交付"]},
+          {id:"q17",prompt:"协作中常见的困难有哪些？（最多选 3 项）",kind:"multiple",max:3,options:["需求不清晰","质量标准不同","决策人较多","时间不足","技术上难以实现","找不到合适对接人","沟通记录不完整"]},
+          {id:"q18",prompt:"项目设计方向通常由谁最终决定？",kind:"single",options:["我自己","设计负责人","提出需求的同事","多方共同决定","没有固定规则"]}
+        ]},
+        {id:"revision",title:"遇到项目打回时",eyebrow:"PART 04 · WHEN WORK COMES BACK",description:"聚焦返工场景：如何把反馈变成明确、可交付的修改方案？",questions:[
+          {id:"q19",prompt:"项目被打回或要求调整时，组内通常如何协作？",kind:"multiple",options:["先统一反馈意见","拆分修改任务","与需求方开会确认","整理多个备选方案","成员各自修改后合并","没有固定方式","其他"]},
+          {id:"q20",prompt:"你们如何产出可交付的修改方案？",kind:"multiple",options:["逐条确认反馈","评估优先级","整理修改说明","制作方案对比","内部评审","请需求方确认","记录修改版本","其他"]},
+          {id:"q21",prompt:"返工期间，你们通常通过什么方式与跨部门沟通？",kind:"multiple",options:["项目群沟通","同步会议","文档记录","项目管理工具","由负责人统一协调","直接联系相关同事","其他"]},
+          {id:"q22",prompt:"返工过程中最困难的部分是什么？",kind:"single",options:["反馈不明确","不同人意见冲突","优先级难判断","责任人不清楚","确认实现边界","时间紧","确认后又有新意见","其他"]}
+        ]},
+        {id:"outlook",title:"能力与下一步",eyebrow:"PART 05 · WHAT'S NEXT",description:"最后聊聊 AI 时代的能力变化与真实经历。",questions:[
+          {id:"q23",prompt:"你认为视觉设计师最需要补足哪些能力？（最多选 3 项）",kind:"multiple",max:3,options:["版式 / 构图","色彩能力","审美判断","需求转译","提示词与规则","工作流搭建","质量把控","跨部门沟通"]},
+          {id:"q24",prompt:"哪些能力因为 AI 普及而变得不那么常用？",kind:"multiple",optional:true,options:["版式 / 构图","色彩能力","审美判断","需求转译","提示词与规则","工作流搭建","质量把控","跨部门沟通","没有明显减少"]},
+          {id:"q25",prompt:"AI 普及后，你觉得自己的工作重心如何变化？",kind:"single",options:["执行制作减少","判断与质量把控增加","沟通协调增加","工作流搭建增加","没有明显变化"]},
+          {id:"q26",prompt:"可以分享一次跨部门协作或 AI 使用的真实经历吗？（请勿写姓名、公司或客户名称）",kind:"text",optional:true,placeholder:"项目背景、遇到的卡点，以及最后如何解决……"}
+        ]}
+      ];
+      const allQuestions=sections.flatMap(s=>s.questions),questionById=Object.fromEntries(allQuestions.map(q=>[q.id,q]));
+      const state={part:0,answers:{},submitted:false,localRecords:loadLocal(),memory:[]};
+      const formContainer=document.getElementById("form-container"),statusNode=document.getElementById("analysis-status");
+      function loadLocal(){try{return JSON.parse(localStorage.getItem("designerSurveyResponses")||"[]")}catch{return []}}
+      function saveLocal(record){try{const rows=loadLocal();rows.push(record);localStorage.setItem("designerSurveyResponses",JSON.stringify(rows));state.localRecords=rows}catch{state.memory.push(record);state.localRecords=state.memory}}
+      function esc(value){return String(value).replace(/[&<>"']/g,ch=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[ch]))}
+      function selectedFor(qid){const value=state.answers[qid];return Array.isArray(value)?value:typeof value==="string"?[value]:[]}
+      function questionMarkup(q,index){
+        const qnum=String(allQuestions.indexOf(q)+1).padStart(2,"0"),optional=q.optional?'<small class="optional">选填</small>':"";
+        let control="";
+        if(q.kind==="text") control=`<textarea class="field" rows="5" maxlength="3000" data-answer-text="${q.id}" data-testid="standalone-input-${q.id}" placeholder="${esc(q.placeholder||"")}">${esc(state.answers[q.id]||"")}</textarea>`;
+        else if(q.kind==="matrix") control=`<div class="matrix">${q.rows.map((row,ri)=>{
+          if(!q.multi){const value=state.answers[q.id]?.[row]||"";return `<label class="matrix-select"><span>${row}</span><select data-matrix-select="${q.id}" data-row="${esc(row)}" data-testid="standalone-select-${q.id}-${ri+1}"><option value="">请选择</option>${q.options.map(o=>`<option value="${esc(o)}" ${value===o?"selected":""}>${esc(o)}</option>`).join("")}</select></label>`}
+          const chosen=state.answers[q.id]?.[row]||[];
+          return `<details class="matrix-row"><summary data-matrix-summary="${q.id}" data-row="${esc(row)}"><span>${row}</span><small>${chosen.length?`已选 ${chosen.length} 项`:"选择参与角色"}</small></summary><div class="options">${q.options.map((o,oi)=>`<button type="button" class="option ${chosen.includes(o)?"selected":""}" aria-pressed="${chosen.includes(o)}" data-matrix-choice="${q.id}" data-row="${esc(row)}" data-option="${esc(o)}" data-testid="standalone-option-${q.id}-${ri+1}-${oi+1}"><span>${esc(o)}</span>${chosen.includes(o)?'<span class="check" aria-hidden="true">✓</span>':""}</button>`).join("")}</div></details>`
+        }).join("")}</div>`;
+        else control=`<div class="options" role="group" aria-label="${esc(q.prompt)}">${q.options.map((o,oi)=>{const selected=selectedFor(q.id).includes(o);return `<button type="button" class="option ${selected?"selected":""}" aria-pressed="${selected}" data-choice="${q.id}" data-option="${esc(o)}" data-testid="standalone-option-${q.id}-${oi+1}"><span>${esc(o)}</span>${selected?'<span class="check" aria-hidden="true">✓</span>':""}</button>`}).join("")}</div>`;
+        const hint=q.kind==="matrix"?'<p class="hint">请为每个阶段分别填写</p>':q.kind==="multiple"?`<p class="hint">可多选${q.max?` · 最多 ${q.max} 项`:""}</p>`:"";
+        return `<fieldset class="question" data-question="${q.id}"><legend><span class="qnum">${qnum}</span>${esc(q.prompt)}${optional}</legend>${hint}${control}</fieldset>`;
+      }
+      function renderPart(){
+        if(state.submitted){formContainer.innerHTML=`<div class="thanks" data-testid="standalone-status-success"><div class="success-icon" aria-hidden="true">✓</div><p class="eyebrow">THANK YOU · 感谢参与</p><h2>你的经验，<br>会让协作更好一点。</h2><p>问卷已提交。感谢你分享真实的工作感受。</p><button type="button" class="btn primary" data-action="analysis">查看数据分析 →</button></div>`;return}
+        const s=sections[state.part],done=Object.keys(state.answers).length;
+        const privacy=API_ENDPOINT?"问卷不要求姓名和联系方式。开放题请勿填写可识别个人的信息；提交后将安全保存至调查数据表。":"问卷不要求姓名和联系方式。开放题请勿填写可识别个人的信息；默认保存在当前浏览器，换设备不会同步。";
+        formContainer.innerHTML=`<div class="progress-top"><span>第 ${state.part+1} / ${sections.length} 部分</span><span>已填写 ${done} / ${allQuestions.length}</span></div><div class="progress" aria-label="问卷进度"><span style="width:${(state.part+1)/sections.length*100}%"></span></div><div class="part-head"><p class="eyebrow">${s.eyebrow}</p><h2 id="part-title">${s.title}</h2><p>${s.description}</p></div>${s.questions.map(questionMarkup).join("")}<label class="honeypot" aria-hidden="true">Leave empty<input autocomplete="off" tabindex="-1" data-testid="standalone-honeypot"></label><p class="error" id="form-error" role="alert" hidden></p><div class="actions">${state.part?'<button class="btn secondary" type="button" data-action="back" data-testid="standalone-btn-back">← 上一部分</button>':""}${state.part<sections.length-1?'<button class="btn primary" type="button" data-action="next" data-testid="standalone-btn-next">继续填写 →</button>':'<button class="btn primary" type="button" data-action="submit" data-testid="standalone-btn-submit">提交问卷 →</button>'}</div><p class="privacy">${privacy}</p>`;
+      }
+      function setError(message){const node=document.getElementById("form-error");if(node){node.textContent=message;node.hidden=!message}}
+      function sectionComplete(s){return s.questions.every(q=>{if(q.optional)return true;const a=state.answers[q.id];if(q.kind==="matrix"){if(!a)return false;return q.rows.every(row=>{const cell=a[row];return Array.isArray(cell)?cell.length>0:typeof cell==="string"&&cell.length>0})}return Array.isArray(a)?a.length>0:typeof a==="string"&&a.trim().length>0})}
+      function answerClick(button){const q=questionById[button.dataset.choice||button.dataset.matrixChoice],qid=q.id,option=button.dataset.option;
+        if(button.dataset.matrixChoice){const row=button.dataset.row,matrix=state.answers[qid]||{},current=matrix[row]||[],next=current.includes(option)?current.filter(v=>v!==option):current.length<(q.max||9)?[...current,option]:current;state.answers[qid]={...matrix,[row]:next};const detail=button.closest("details"),small=detail.querySelector("summary small");small.textContent=next.length?`已选 ${next.length} 项`:"选择参与角色";detail.querySelectorAll("[data-matrix-choice]").forEach(el=>{const active=next.includes(el.dataset.option);el.classList.toggle("selected",active);el.setAttribute("aria-pressed",String(active));el.querySelector(".check")?.remove();if(active&&!el.querySelector(".check")){const mark=document.createElement("span");mark.className="check";mark.setAttribute("aria-hidden","true");mark.textContent="✓";el.append(mark)}})}
+        else if(q.kind==="single"){state.answers[qid]=option;const fieldset=button.closest("fieldset");fieldset.querySelectorAll("[data-choice]").forEach(el=>{const active=el.dataset.option===option;el.classList.toggle("selected",active);el.setAttribute("aria-pressed",String(active));el.querySelector(".check")?.remove();if(active){const mark=document.createElement("span");mark.className="check";mark.setAttribute("aria-hidden","true");mark.textContent="✓";el.append(mark)}})}
+        else{const current=selectedFor(qid),next=current.includes(option)?current.filter(v=>v!==option):current.length<(q.max||q.options.length)?[...current,option]:current;state.answers[qid]=next;const fieldset=button.closest("fieldset");fieldset.querySelectorAll("[data-choice]").forEach(el=>{const active=next.includes(el.dataset.option);el.classList.toggle("selected",active);el.setAttribute("aria-pressed",String(active));el.querySelector(".check")?.remove();if(active){const mark=document.createElement("span");mark.className="check";mark.setAttribute("aria-hidden","true");mark.textContent="✓";el.append(mark)}})}
+        const progress=document.querySelector(".progress-top span:last-child");if(progress)progress.textContent=`已填写 ${Object.keys(state.answers).length} / ${allQuestions.length}`;
+      }
+      formContainer.addEventListener("click",async event=>{
+        const choice=event.target.closest("[data-choice],[data-matrix-choice]");if(choice){answerClick(choice);return}
+        const action=event.target.closest("[data-action]")?.dataset.action;if(!action)return;
+        if(action==="analysis"){switchView("analysis");return}
+        if(action==="back"){state.part--;renderPart();document.getElementById("survey-content").scrollIntoView({behavior:"smooth"});return}
+        if(action==="next"){if(!sectionComplete(sections[state.part])){setError("还有必答问题未完成，请为每个问题选择答案后继续。");return}state.part++;renderPart();document.getElementById("survey-content").scrollIntoView({behavior:"smooth"});return}
+        if(action==="submit"){
+          if(!sectionComplete(sections[state.part])){setError("还有必答问题未完成，请先完成必答题。");return}
+          const honeypot=formContainer.querySelector("[data-testid='standalone-honeypot']")?.value||"";if(honeypot){state.submitted=true;renderPart();return}
+          const submitButton=event.target.closest("[data-action='submit']");submitButton.disabled=true;submitButton.textContent="正在提交…";
+          try{if(API_ENDPOINT){const response=await fetch(API_ENDPOINT,{method:"POST",headers:{"content-type":"application/json"},body:JSON.stringify({answers:state.answers,honeypot:""})});if(!response.ok)throw new Error(response.status===503?"服务端尚未连接 Google Sheets。":"提交失败，请检查网络后重试。");const result=await response.json();if(!result.ok)throw new Error("服务端未能保存答案，请稍后重试。")}else saveLocal({submittedAt:new Date().toISOString(),answers:state.answers});state.submitted=true;renderPart()}
+          catch(error){submitButton.disabled=false;submitButton.textContent="提交问卷 →";setError(error instanceof Error?error.message:"提交失败，请稍后重试。")}
+        }
+      });
+      formContainer.addEventListener("input",event=>{const field=event.target.closest("[data-answer-text]");if(field)state.answers[field.dataset.answerText]=field.value});
+      formContainer.addEventListener("change",event=>{const field=event.target.closest("[data-matrix-select]");if(field){const qid=field.dataset.matrixSelect,matrix=state.answers[qid]||{};state.answers[qid]={...matrix,[field.dataset.row]:field.value}}});
+      function switchView(name){document.getElementById("survey-view").hidden=name!=="survey";document.getElementById("analysis-view").hidden=name!=="analysis";document.querySelectorAll("[data-view]").forEach(button=>button.classList.toggle("active",button.dataset.view===name));if(name==="analysis")loadAnalysis()}
+      document.querySelectorAll("[data-view]").forEach(button=>button.addEventListener("click",()=>switchView(button.dataset.view)));
+      document.getElementById("refresh-analysis").addEventListener("click",loadAnalysis);
+      function localSummary(){const records=state.localRecords||[],total=records.length,items={};for(let n=1;n<=25;n++){const id=`q${n}`,q=questionById[id],counts={};if(!q)continue;q.options.forEach(option=>counts[option]=0);for(const record of records){const answer=record.answers?.[id];if(q.kind==="matrix"){for(const row of q.rows){const cell=answer?.[row];(Array.isArray(cell)?cell:cell?[cell]:[]).forEach(value=>{if(value in counts)counts[value]++})}}else(Array.isArray(answer)?answer:answer?[answer]:[]).forEach(value=>{if(value in counts)counts[value]++})}items[id]=counts}return{total,items}}
+      function makeChart(q,data,total){const id=Number(q.id.slice(1)),entries=Object.entries(data||{}).sort((a,b)=>b[1]-a[1]),max=Math.max(1,...entries.map(([,value])=>value)),top=entries.find(([,value])=>value>0),note=["q8","q9","q10"].includes(q.id)?"按项目阶段累计回答次数":q.kind==="multiple"?"多选题 · 按选项累计份数":"单选题 · 回答份数";return `<section class="chart" data-testid="standalone-analysis-${q.id}"><p class="chart-id">Q${id}</p><h3>${esc(q.prompt)}</h3><p class="chart-note">${note}</p>${total&&entries.length?`<div class="bars">${entries.map(([label,value])=>`<div><div class="bar-label"><span>${esc(label)}</span><strong>${value}</strong></div><div class="track"><span style="width:${value?Math.max(5,value/max*100):0}%"></span></div></div>`).join("")}</div>`:'<div class="empty"><span aria-hidden="true">▤</span><span>收到有效问卷后，这里会自动汇总。</span></div>'}${top?`<p class="summary-line">「${esc(top[0])}」目前最多，共 ${top[1]} 次。</p>`:""}</section>`}
+      async function loadAnalysis(){const count=document.getElementById("response-count"),status=document.getElementById("analysis-status"),container=document.getElementById("analysis-groups");status.textContent="正在读取汇总数据…";container.innerHTML="";try{let summary;if(API_ENDPOINT){const response=await fetch(API_ENDPOINT,{cache:"no-store"});const data=await response.json();if(!response.ok||!data.items)throw new Error(data.error||"服务端分析暂不可用");summary=data}else summary=localSummary();count.textContent=summary.total;status.textContent=API_ENDPOINT?"已连接服务器汇总":"本地预览数据 · 仅此浏览器可见";const groups=[{title:"基本情况与公司",sectionIds:["profile"]},{title:"项目协作与 AI 使用",sectionIds:["flow","collab"]},{title:"项目修改与能力变化",sectionIds:["revision","outlook"]}];container.innerHTML=groups.map((group,gi)=>{const qs=group.sectionIds.flatMap(sid=>sections.find(s=>s.id===sid).questions).filter(q=>q.id!=="q26");return `<details class="group" ${gi===0?"open":""}><summary><span>${group.title}</span><small>${qs.length} 项分析</small></summary><div class="charts">${qs.map(q=>makeChart(q,summary.items?.[q.id],summary.total)).join("")}</div></details>`}).join("")}catch(error){status.textContent=error instanceof Error?error.message:"分析数据暂不可用";status.classList.add("error")}}
+      renderPart();
+    })();
+  </script>
+<section aria-label="项目资料" style="width:min(100% - 32px,850px);margin:24px auto 48px;color:#203b57;font:14px/1.7 system-ui,sans-serif">
+  <h2 style="font-size:20px">项目资料（已合并到本文件）</h2>
+  <details style="margin:12px 0;padding:14px 18px;border:1px solid #d7e8f7;border-radius:16px;background:#ffffffd9">
+    <summary style="cursor:pointer;font-weight:700">自动化测试源码 · survey-standalone.spec.ts</summary>
+    <pre style="max-height:60vh;overflow:auto;white-space:pre-wrap;overflow-wrap:anywhere;font:12px/1.65 ui-monospace,Consolas,monospace">import { expect, test } from "@playwright/test";
+
+test("单文件 HTML 在手机与桌面可用，完成问卷并显示本地分析", async ({ page }) =&gt; {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.goto("/survey-standalone.html");
+  await page.evaluate(() =&gt; localStorage.clear());
+  await page.reload();
+  await expect(page.getByTestId("standalone-btn-next")).toBeVisible();
+  expect(await page.evaluate(() =&gt; document.documentElement.scrollWidth &lt;= innerWidth)).toBe(true);
+  expect(await page.locator("link[rel=stylesheet],script[src]").count()).toBe(0);
+  await page.getByTestId("standalone-btn-next").click();
+  await expect(page.locator("#form-error")).toContainText("必答问题未完成");
+
+  for (let section = 0; section &lt; 5; section += 1) {
+    const start = [1, 8, 15, 19, 23][section];
+    const end = [7, 14, 18, 22, 26][section];
+    for (let q = start; q &lt;= end; q += 1) {
+      if (q === 26 || [8, 9, 10].includes(q)) continue;
+      await page.getByTestId(`standalone-option-q${q}-1`).click();
+    }
+    if (section === 1) {
+      for (let stage = 1; stage &lt;= 7; stage += 1) {
+        const row = ["需求接收", "方向讨论", "首稿制作", "组内评审", "跨部门对齐", "修改迭代", "交付上线"][stage - 1];
+        await page.locator(`[data-matrix-summary="q8"][data-row="${row}"]`).click();
+        await page.getByTestId(`standalone-option-q8-${stage}-1`).click();
+        await page.getByTestId(`standalone-select-q9-${stage}`).selectOption({ index: 1 });
+        await page.locator(`[data-matrix-summary="q10"][data-row="${row}"]`).click();
+        await page.getByTestId(`standalone-option-q10-${stage}-1`).click();
+      }
+    }
+    if (section &lt; 4) await page.getByTestId("standalone-btn-next").click();
+  }
+  await page.getByTestId("standalone-btn-submit").click();
+  await expect(page.getByTestId("standalone-status-success")).toBeVisible();
+  await page.getByRole("button", { name: "查看数据分析" }).click();
+  await expect(page.getByTestId("analysis-total")).toContainText("1");
+  await expect(page.getByTestId("standalone-analysis-q7")).toContainText("已投入使用");
+  await page.getByTestId("standalone-tab-analysis").click();
+  await page.getByText("项目协作与 AI 使用", { exact: true }).click();
+  await expect(page.getByTestId("standalone-analysis-q9")).toContainText("没有使用");
+
+  await page.setViewportSize({ width: 1440, height: 900 });
+  await page.reload();
+  expect(await page.evaluate(() =&gt; document.documentElement.scrollWidth &lt;= innerWidth)).toBe(true);
+});
+
+test("单文件 HTML 可切换到同源接口模式，并展示 Sheets 未配置状态", async ({ page }) =&gt; {
+  await page.goto("/survey-standalone.html?api=1");
+  await page.getByTestId("standalone-tab-analysis").click();
+  await expect(page.locator("#analysis-status")).toContainText("Google Sheets 尚未连接");
+});
+</pre>
+  </details>
+  <details style="margin:12px 0;padding:14px 18px;border:1px solid #d7e8f7;border-radius:16px;background:#ffffffd9">
+    <summary style="cursor:pointer;font-weight:700">开发清单 · TODO.md</summary>
+    <pre style="max-height:60vh;overflow:auto;white-space:pre-wrap;overflow-wrap:anywhere;font:12px/1.65 ui-monospace,Consolas,monospace"># 黑场作品集开发规格书与计划
+
+## 1. 项目框架
+
+- 当前产品事实：[prd/README.md](prd/README.md)；设计合同：[MASTER.md](design-system/黑场作品集/MASTER.md)。本文件保留开发合同与验收进度；03 首版已实现并通过轻量验证。
+- 工具形态：网站，优先在桌面使用，同时适配手机。
+- 主框架：Next.js App Router + React + TypeScript；Tailwind CSS + CSS variables。
+- 框架映射：网站 → Next.js；桌面软件 → Electron；浏览器插件 → vite-web-extension。本项目仅使用 Next.js。
+- 选择理由：复用首页与类目列表模板，支持独立 URL、直达、刷新和静态展示。
+- Agent 启用矩阵：
+  - 必选：mvp-requirement-analyst、project-architecture-planner、qa-acceptance-planner；已由 requirements、architecture、acceptance 三个独立子 Agent 并行审查。
+  - 条件启用：ui-interaction-planner；当前未加载对应 Profile，由主会话按职责完成界面、状态、素材和响应式专项。
+  - 未启用：api-integration-planner（展示 AI 作品不等于调用 AI 服务，本期无 API）；platform-capability-planner（无特殊平台权限）。
+- 多 Agent 需求拆解结果：五类独立列表；稳定 slug 与显示名称分离；作品卡片为静态内容占位；未知路径 404；当前导航由 URL 决定。QA 覆盖五条路径、直达刷新、配置隔离和手机布局。
+- 合并裁决：范围以 PRD 为准；不因通用设计推荐新增订阅表单、彩色 CTA、社交证明或复杂动效。
+- 规划默认值：产品暂名“黑场作品集”，类目一至五，每类六卡；PRD 示例人物不作为真实个人资料展示。
+
+## 已完成模块（详见 prd/）
+
+已实现代码与轻量验证见 [分类与浏览](prd/portfolio/README.md)、[展示骨架](prd/presentation/README.md)。尚未完成全量 project-verify，不卸货仍待验收的 §2 功能块。
+
+## 2. MVP 功能拆解
+
+### 2.6 当前迭代：参考新视频的连续交互（用户已确认）
+
+- [x] 刷新首页后完整头像自下而上进入，再自动展开工具；取消手动开合入口。图片加载完成才开始，避免空白入场。
+- [x] 鼠标左右移动时眼部有限跟随，悬停工具时向上看，离开复位；四个工具独立悬停抬升、显示名称，键盘聚焦和触屏点击同样可查看名称。
+- [x] 向下滚动驱动姓名缩小、头像上移和翻转露出白色背面，再进入现有五类作品区；回滚恢复。使用原生滚动，不劫持滚轮。
+- [x] 保持白底、粉字、选定人物及白色撕纸边；1440×900 验收入场、四工具、眼神、退场和反向恢复；390px 无横向溢出；减弱动态时直接展示静态展开态。
+- [x] 执行 lint / test / typecheck 与浏览器回归，截图并记录素材与视觉模拟的边界。
+
+### 2.5 前版首页动效（已归档）
+
+- [x] 已验证历史实现已归档至 [展示与首页交互](prd/presentation/README.md)。按钮开合与整体视差已由 §2.6 连续交互取代。
+
+### 2.1 分类首页
+
+- 用户目标：让潜在客户快速选择感兴趣的视觉 / AI 创意设计方向。
+- 使用入口：`/`。
+- 子功能：
+  - [x] 渲染共享顶部导航：首页与五类，首页声明当前页。
+  - [x] 渲染个人介绍占位，不使用虚构姓名或业绩。
+  - [x] 从统一配置按固定顺序展示五个真实链接入口。
+- 主流程：打开首页 → 浏览介绍和五类 → 点击类目 → 对应独立列表。
+- 输入 / 输出 / 反馈：目标 slug → 对应 URL；链接有悬停、按下和键盘焦点反馈。
+- 状态要求：默认五类；类目集合为空显示“类目待更新”；本地同步配置无业务加载态、不造假延迟；成功为路由跳转；非法目标显示 404，配置错误在验证中报告。
+- 数据需求：介绍标题 / 描述、类目 slug / 名称 / 说明 / 排序，只读不持久化。
+- 数据来源：`FIXTURE`；用户明确要求内容占位，不冒充真实作品。
+- 演示策略：`FIXTURE_DEMO`；`src/fixtures/portfolio.ts` 集中配置五类，页面标注“内容占位，待更新”。
+- 首屏可演示形态：可点击的五类入口，不增加示例模式开关。
+- MVP 边界：固定五类和真实导航；暂不实现分类编辑、后台、联系表单。
+- 验收标准：
+  - [x] 打开 `/`，`home-status-introduction-placeholder` 可见，`home-list-categories` 内恰有五个入口。
+  - [ ] 逐一点击 `home-link-category-{slug}`，category-1 至 category-5 分别到达 `/works/{slug}`。
+  - [ ] `layout-link-home` 有 aria-current="page"，其他导航不声明当前页。
+
+### 2.2 独立类目页面
+
+- 用户目标：直接访问、分享某类作品并切换其他类目。
+- 使用入口：`/works/category-1` 至 `/works/category-5`，统一模板 `/works/[categorySlug]`。
+- 子功能：
+  - [x] 按 slug 查找类目，渲染标题、说明与所属作品网格。
+  - [x] 枚举五条静态路由，未知 slug 调用 notFound，不回退到任意有效类目。
+  - [x] 导航高亮当前类目，可返回首页、切换类目、浏览器后退 / 前进。
+- 主流程：直达或点击类目 → 根据 URL 读取配置 → 标题和六卡 → 切换 / 返回。
+- 输入 / 输出 / 反馈：URL slug → 类目数据；标题、导航和卡片集合保持一致。
+- 状态要求：默认六卡；有效类目无作品显示“该类目作品待更新”；无远程加载；成功为内容一致；未知类目或路径显示“页面未找到”和首页链接。若存在框架 pending 回退，预留空间且加载完成后消失。
+- 数据需求：只读当前类目和作品，URL 是当前类目唯一事实来源。
+- 数据来源：`FIXTURE`；演示策略：`FIXTURE_DEMO`；复用 `src/fixtures/portfolio.ts`，每类六条、共三十条，卡片明确标记待更新。
+- 首屏可演示形态：类目标题、说明占位及六卡。
+- MVP 边界：五类共享模板、可刷新独立地址；暂不实现详情、分页和筛选。
+- 验收标准：
+  - [ ] 五条 URL 逐个直接打开和刷新，`category-status-title` 匹配配置，`category-list-works` 各有六卡。
+  - [ ] 当前 `layout-link-category-{slug}` 有 aria-current="page"，其余导航不声明当前页。
+  - [ ] 类目一切换类目五再返回首页，URL、内容与高亮同步；后退 / 前进后同样一致。
+  - [ ] `/works/unknown` 和 `/unknown` 显示 `notfound-status-message`；`notfound-link-home` 可返回首页。
+
+### 2.3 可替换作品卡片
+
+- 用户目标：先确认展示结构，后续补内容不改布局。
+- 使用入口：类目列表作品网格。
+- 子功能：
+  - [x] 每卡含 4:3 灰色封面、名称、描述和“作品待更新”。
+  - [x] 使用非交互 article，无详情链接、按钮、点击处理或手形光标。
+  - [x] 使用全站稳定唯一 ID，所有占位内容集中配置，不在 JSX 散落 mock。
+- 主流程：读取当前类目作品 → 按稳定 ID 渲染 → 浏览占位内容。
+- 输入 / 输出 / 反馈：作品配置 → 静态卡片，无写操作与网络反馈。
+- 状态要求：默认静态灰块；空集合由列表空态处理；无持续 shimmer、aria-busy 或伪加载；成功为完整占位展示；无封面仍显示灰块，无无效图片请求。未来真实图片失败回退灰块，本期不新增上传能力。
+- 数据需求：id / categorySlug / title / description / status="placeholder"；封面统一由 CSS 绘制。
+- 数据来源：`FIXTURE`；演示策略：`FIXTURE_DEMO`；`src/fixtures/portfolio.ts` 每类六条，“作品待更新”为可见标记。
+- 首屏可演示形态：灰色封面及名称、描述占位。
+- MVP 边界：配置可替换、布局复用；暂不实现编辑 UI、上传、详情或互动。
+- 验收标准：
+  - [ ] 每个 `category-item-work-{workId}` 都含封面、标题、描述及 `category-status-placeholder-{workId}`。
+  - [ ] 卡片无链接、按钮，不进入 Tab 顺序，无破图请求。
+  - [ ] 临时测试 fixture 替换一个类目名称、说明和一张卡片文案，首页 / 导航 / 列表同步更新；其余四类不变，slug 不变。通过依赖注入或临时副本验证，不污染交付数据。
+
+### 2.4 响应式视觉骨架
+
+- 用户目标：电脑展示清晰，手机所有入口同样可用。
+- 使用入口：首页、五类列表和 404。
+- 子功能：
+  - [x] 落实 MASTER 黑灰 token、留白、圆角与字体。
+  - [x] 小于 640px 一列、640–1023px 两列、1024px 起三列；首页五入口与作品网格均遵循此规则。
+  - [x] 顶部六项导航可换行，不增加隐藏菜单，保持全部可达。
+  - [x] 键盘焦点、跳到主内容、语义标题及减弱动效支持。
+- 主流程：打开页面 → 随视口重排 → 使用相同导航路径。
+- 输入 / 输出 / 反馈：视口、键盘与系统动效偏好 → 布局和焦点反馈。
+- 状态要求：默认黑灰布局；空 / 错误页沿用主题；无独立业务加载或服务未配置态；成功为无溢出且可操作；长文自然换行，不裁掉导航。
+- 数据来源：`FIXTURE`；演示策略：`FIXTURE_DEMO`；沿用前述配置，无额外数据。
+- 首屏可演示形态：桌面三列、手机一列，全部导航可达。
+- MVP 边界：静态网格和明度过渡；暂不实现环形动效、错落展陈、主题切换。
+- 验收标准：
+  - [ ] 1440×900、768×1024、390×844、320×568 下检查首页和列表，scrollWidth &lt;= innerWidth，无遮挡，导航全部可操作。
+  - [ ] 仅 Tab / Enter 完成首页 → 类目一 → 类目五 → 首页，焦点可见、顺序合理、无陷阱。
+  - [ ] 200% 字号与长文下仍可操作；reduced-motion 下无装饰动画；正文对比度至少 4.5:1。
+
+## 3. 界面与交互规格
+
+- [x] 全站中文 lang、语义页头和 main、唯一 h1；路由切换后标题和主内容可感知。
+- [x] 所有链接有真实 href，不使用空链接或虚假详情入口。
+- [x] testid：`layout-nav-primary`、`layout-link-home`、`layout-link-category-{slug}`、`layout-link-skip-main`。
+- [x] 首页：`home-status-introduction-placeholder`、`home-list-categories`、`home-link-category-{slug}`。
+- [x] 列表：`category-status-title`、`category-status-description-placeholder`、`category-list-works`、`category-item-work-{workId}`、`category-status-placeholder-{workId}`、`category-status-empty`。
+- [x] 异常：`notfound-status-message`、`notfound-link-home`；若实际实现框架回退，再用 `layout-status-loading`、`layout-status-error`、`layout-btn-retry`，不为凑状态造控件。
+- [x] slug 为 category-1 至 category-5，workId 如 category-1-work-1；显式配置、全站唯一，不随排序或文案改变。
+
+## 4. 架构与模块边界
+
+- [x] 开发阶段初始化 Next.js App Router + TypeScript，锁文件固定实际依赖；已安装依赖并生成 package-lock.json。
+- [x] `src/app/layout.tsx`、`page.tsx`、`works/[categorySlug]/page.tsx`、`not-found.tsx`、`globals.css`。
+- [x] `src/components/`：SiteHeader、CategoryCard、WorkCard、WorkGrid；默认 Server Components；如用 usePathname，仅导航采用最小客户端边界。
+- [x] `src/fixtures/portfolio.ts` 存占位配置，`src/lib/portfolio.ts` 放类型、查找和路径构造，禁止五页复制。
+- [x] 数据合同：Portfolio 含 introduction、categories；Category 含 slug / name / description / works；Work 含 id / categorySlug / title / description / status。均只读。
+- [x] 初始配置五个固定唯一 slug、每类六卡、三十个唯一作品 ID、归属一致；运行时允许有效类目空作品数组显示空态。初始数量通过 seed 测试验收。
+- [x] 状态流：入口 URL → slug 查找 → 同一类目 → 标题 / 导航 / 网格；无数据库、浏览器持久化、API Route、登录、密钥或状态库。
+- [x] generateStaticParams 枚举五类，非法 slug 调用 notFound；采用 Next.js 默认部署模式，不提前开启静态导出。
+- [x] React 转义文本，禁止 dangerouslySetInnerHTML。本期无 API / IPC / 第三方请求，不制造调用日志；未来增加调用须覆盖入口、脱敏参数摘要、结果、错误原因，不输出敏感信息。
+- [x] 开发顺序：工程 / 配置 → 全局样式 / 导航 → 首页 → 类目 / 404 → 状态 / 响应式 → 验证。
+
+## 5. 设计系统
+
+- [x] 已读取 PRD UI 风格及 ui-ux-pro-max，完成 UI 专项。
+- [x] 创建 design-system/黑场作品集/MASTER.md，含画像、UI 栈、图标、媒体、数据、token、状态及尺寸。
+- [x] 将 MASTER 落地到 Tailwind 与 CSS variables。
+- [x] 单一图标库 lucide-react；按需使用方向提示，不使用 emoji 或多库。
+- [x] CSS 灰块占位，IMAGE_PROVIDER=none，不依赖 Unsplash Key、远程图片或字体。
+
+## 6. API 与集成
+
+当前 MVP 不需要远程 API。AI 是作品类型；不需要模型服务、账号同步、鉴权、图库、分析追踪或后台，不增加 API 接入章节。
+
+## 7. 平台能力与权限
+
+纯网站导航与静态内容，无文件系统、剪贴板、通知权限；无 Electron、manifest 或扩展 background。
+
+## 8. 验证
+
+- [ ] 开发后运行 project-verify，逐条执行 §2 并回写，不将规划标记为 UI 已通过。
+- [x] 已提供 npm run lint（ESLint）、npm run test（Vitest）、npm run typecheck（tsc --noEmit），另建议 npm run test:e2e（Playwright）。
+- [ ] 非 UI 测试覆盖 slug 查找、未知 slug、路径生成、初始配置不变量、配置修改隔离和有效类目空数组。
+- [ ] Playwright 覆盖五类点击 / 直达 / 刷新、导航 / history、标题 / 六卡 / aria-current、404。
+- [ ] 生成 TESTING_CHECKLIST.md，以 §3 稳定 testid 验收；test-results/ 保存日志和四视口首页及至少一个类目页截图。
+- [ ] 空态用 fixture 覆盖；无 LIVE 未配置或远程加载，记录不适用，不伪造状态。
+- [ ] 检查无运行时错误、破图；长文、键盘、焦点、对比度、减弱动态效果按 §2.4 验证。
+- [ ] 发布时在实际预览 / 托管环境复验五条独立路径刷新；开发服务器通过不替代部署验收。
+- [ ] 记录所有失败 / 跳过项；脚本缺失记“⚠️ 未提供该 script”并追加补齐任务。build 只在发布、打包或构建产物验证时按需执行。
+
+## 9. 开发完成后更新 PRD
+
+- [x] 调用 update-prd，基于实际代码生成 prd/ 已实现文档和验证记录。
+- [x] 对照原始 PRD 把差距回写 §10；按 Skill 要求归档原稿，不提前移动。
+- [x] 协议或入口变化时同步 AGENTS.md。
+
+## 10. 未完成目标 / 后续功能
+
+- [x] 首版骨架已实现，依赖已安装，轻量验证通过；全量验收保留未勾选项。
+- [ ] 补真实个人介绍、类目名及作品；不阻塞骨架。
+- 详情、筛选、后台、联系表单、上传和复杂展陈不在首版，需另行确认。
+
+### 10.1 手机端设计师协作与 AI 使用调查（用户已确认）
+- [x] 创建独立 `/survey` 手机端问卷和 `/survey/analysis` 数据可视化页面；不改变作品集首页。
+  - 验收：手机宽度问卷首屏、分步页面、题目选择/输入、前后导航、必填校验、提交成功/失败均可操作；可用 `data-testid` 稳定定位。
+- [x] 落实 5 个部分、26 题的调查内容，保留原问卷并加入用户新增的行业/角色/公司 Agent、项目启动协作、Agent 跨部门沟通、项目返工协作与修改方案等问题；Q8–Q10 保留逐阶段成员/部门/AI 参与矩阵。
+  - 验收：每题答案可汇总为结构化 JSON，必填题完整校验，开放题可选；服务端验证请求结构并拒绝超限文本。
+- [ ] 接入 Google Sheets 收集与分析数据；表结构支持提交时间、问卷答案及分析聚合。
+  - 验收：Sheets 未配置时清晰显示未连接提示；配置后 POST 写入新行、GET 返回脱敏聚合统计；所有服务端调用记录入口摘要、结果、耗时和失败原因，不记答案原文/密钥。
+- [x] 数据分析页面用手机图表展示样本量、AI 使用阶段、公司 Agent 状态、跨部门协作与返工方式；空数据/加载/失败均有状态。
+  - 验收：仅使用 API 返回的真实汇总；预览示例必须由用户主动切换并明确标注；图表具备文字摘要和可访问标签。
+- 进度：手机端交互、问卷校验、图表状态、API Route、Apps Script 代码与表格模板已完成。原生表格已创建；真实 POST/聚合 GET 尚未验收，需表格所有者按 `google-apps-script/DEPLOY.md` 部署 Web App，并配置 `GOOGLE_SHEETS_WEB_APP_URL`、`GOOGLE_SHEETS_WEB_APP_TOKEN` 后完成一次真实提交验证。
+
+### 10.2 独立 HTML 交付（用户已确认）
+- [x] 生成一个可独立使用的响应式问卷 HTML，所有 CSS 与 JavaScript 均内嵌，不依赖外部框架或资源。
+  - 验收：单 HTML 文件可直接打开；含 5 部分/26 题、必答和矩阵交互、提交成功态、全题分析；窄屏与宽屏均无横向溢出；默认本地保存，并可通过同源 `/api/survey` 对接服务端。
+- 验收结果：`npm run lint`、`npm run test`（7/7）、`npm run typecheck` 与 `npm run test:e2e -- tests/survey-standalone.spec.ts --reporter=line`（2/2）通过；测试确认无外部 CSS/JS 引用、手机与桌面无横向溢出、逐步填答、本地分析和同源接口未配置提示可用。
+- 进度：文件为 `public/survey-standalone.html`，开发服务可经 `/survey-standalone.html` 提供；Google Sheets 访问凭据仍由服务端管理，HTML 不内嵌密钥。
+
+## 开发进度
+
+### 2026-10-19 / 01 阶段（保留）
+- 已澄清桌面兼容手机、视觉 / AI 设计面向客户与合作方、五类独立页面；生成 PRD 与参考图风格。示例人物、暂名和六卡为规划默认值，网站未实现。
+
+### 2026-10-19 / 02 阶段
+- 三个独立 Agent 与主会话 UI 专项已合并为本规格及 MASTER。
+- 本地 ui-ux-pro-max 检索成功；订阅模式、浅底蓝色和远程字体与 PRD 不符，未采用；吸收间距、过渡、无障碍补充。
+- 仅规划文档，无代码、依赖安装、脚手架。下一步：用户确认后 03 开发。
+
+## 验证记录
+
+### 2026-10-19 / 01 阶段（保留）
+- PRD 文档检查完成；无 package.json，lint / test / typecheck 未运行，后续补齐；未执行 build。
+
+### 2026-10-19 / 02 阶段
+- 已核对四个 MVP 的入口、子功能、数据、演示、状态及验收，与 PRD 五类、独立 URL、占位及手机适配一致。
+- 文档结构检查通过：TODO §1–§10 齐全，MASTER 九个必备章节齐全；git diff --check 无报错（新增文档尚未纳入 Git，另以内容结构检查为依据）。
+- ⚠️ 未提供 lint / test / typecheck script：根目录无 package.json。本轮仅文档，未进行业务验证或声明页面通过。
+- 未执行 build，无发布或构建产物任务。
+
+## TODO 卸货记录
+
+暂无；实现并验证稳定后按 codex/rules/todo-prd-archive.md 归档。
+
+### 2026-10-28 / 手机问卷与数据分析迭代
+- 独立手机路径 `/survey` 与 `/survey/analysis` 已实现；Q8–Q10 按项目 7 个阶段分别收集角色、AI 使用占比和对接部门；分析页按主题覆盖 Q1–Q25 的全部选择题，新增协作/返工问题保留在原有题目之后。
+- Google Sheets 模板： [视觉设计师跨部门协作与AI使用情况调查数据](https://docs.google.com/spreadsheets/d/1HNU0oSaxioA_FYmHC4lR29ff7twFrDEbgoWr8Sbh0V0/edit)。包含 `回答数据`（提交时间、Q1–Q26）及 `分析概览` 汇总公式。`google-apps-script/Code.gs` 为服务端数据桥接和聚合脚本。
+- `npm run lint`、`npm run test`（7/7）与 `npm run typecheck` 通过；`npm run test:e2e -- tests/survey.spec.ts --reporter=line` 通过（2/2）。390px 冒烟覆盖分步填写、逐阶段矩阵题、必答错误、未配置提交提示、分析图表数据映射、分析空态与横向溢出；截图 `test-results/survey-mobile.png`、`test-results/survey-analysis-mobile.png`。
+- 未配置环境时真实提交被 API 明确拒绝（503）；尚未部署 Apps Script，也未在生产/云端部署网站。配置凭据并验证实际写入为本模块唯一阻塞项。
+
+
+## 03 开发进度与验证记录
+
+### 2026-10-19 / 开发过程（历史）
+- 已写入页面、导航、配置、响应式样式、404 和测试。依赖安装进行中，未声明验收通过。
+
+
+### 2026-10-19 / 03 首版交付
+- 已实现首页、五类列表、共享导航、三十张卡片、404、手机网格、键盘焦点和稳定 testid。依赖与锁文件已安装；TypeScript 固定 6 系列以兼容 ESLint。
+- npm run lint：退出码 0，无警告；npm run test：3/3 通过；npm run typecheck：退出码 0；npm run test:e2e：2/2 通过。
+- 冒烟证据：类目一进入与刷新、切换类目五、返回首页；390px 首页无溢出、类目二与未知类目回退；截图位于 test-results/。
+- 未执行全量 project-verify：其余 §2 验收保持未勾选；UI 空态、配置修改后的 UI 同步、全五类 history、四视口、长文 / 字号 / 完整键盘与对比度待验。
+- 未执行 build、未部署；实际托管五类直达与刷新待发布阶段验证。
+- update-prd 已全量扫描当前代码与配置，生成 prd/ 两模块及 sync 状态；README 和 AGENTS 已同步，原 PRD 已归档为 prd.original.md。
+- Node.js 22.11 安装产生部分工具 engine 提示，当前检查通过；README 建议 22.13+。开发预览 http://127.0.0.1:3000 。
+- 本次只完成代码与轻量验证，不将未验证的完整验收项当作通过。
+
+
+## 2026-10-19 / 首页动效迭代结果
+- 用户最终选定白底、白色撕纸边版本，未采用蓝边。按桌面首屏实现 Zier Min、Work / About / Contact 和大头像。
+- 透明素材由内置 imagegen 提取 / 编辑并保存在 public/hero/，标题、导航与开合按钮均为真实 HTML。开合为匹配素材的淡化与工具显隐，工具区整体浮动 / 视差，是 2.5D 原型。
+- lint 退出码0；test 3/3通过；typecheck退出码0；浏览器4/4通过（2条新动效 + 2条分类回归）。额外加入空格键检查后，新动效2/2复验通过。
+- 截图：test-results/hero-open.png、hero-closed.png、hero-mobile.png；已检查桌面展开 / 合拢，修正头像比例和头发拼接线。
+- 待后续：独立工具Logo交互、真实3D、眼球跟随尚未实现；保持工具整体示意；真实联系方式待补。手机仅基础适配与减弱动效验证，桌面优先。
+- 未执行全量旧§2验收、未build / 部署；相关未勾项继续保留。文档按本轮增量同步，未全量重建。
+
+
+
+
+### 2026-10-19 / 新视频连续交互完成
+
+- 用户确认五步方案及滚动触发退场后实现 §2.6，已验收项全部勾选；前版 §2.5 已卸货至 prd/presentation。
+- lint、typecheck、3 项单测通过；最终浏览器回归 4/4，通过自动入场、四工具、眼神左右响应、键盘标签、滚动退场 / 回滚、手机减弱动态和原分类流程。
+- 第一轮发现工具 enter 与 pointermove 同帧造成抬眼覆盖，已修复并回归。测试本机服务受沙箱套接字限制时使用已授权的浏览器测试命令重跑。
+- 图片未更换；眼部为照片羽化局部位移，工具为 SVG 分区动画，背面为 CSS 纸片。未加入视频中的张嘴表情、真实三维模型或工具点击业务。无新增依赖，无构建 / 发布。
+- 待后续：用户体验当前节奏后细调；其他旧验收待办继续保留，未冒充全量验收。
+</pre>
+  </details>
+</section>
+</body>
+</html>
+
+
